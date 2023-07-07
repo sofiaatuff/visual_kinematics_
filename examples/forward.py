@@ -8,19 +8,19 @@ from math import pi
 def main():
     np.set_printoptions(precision=3, suppress=True)
 
-    dh_params = np.array([[0.163, 0., 0.5 * pi, 0.],
-                          [0., 0.632, pi, 0.5 * pi],
-                          [0., 0.6005, pi, 0.],
-                          [0.2013, 0., -0.5 * pi, -0.5 * pi],
-                          [0.1025, 0., 0.5 * pi, 0.],
-                          [0.094, 0., 0., 0.]])
+    dh_params = np.array([[0.275, 0., 0., 0.],
+                          [0, 0.301, 0.5 * pi, 0.5 * pi],
+                          [0., 0.700, 0., 0.5 * pi],
+                          [0.190, 0., 0.5 * pi, pi],
+                          [0.500, 0., -0.5 * pi, 0.],
+                          [0.162, 0., 0.5 * pi, 0.]])
     robot = RobotSerial(dh_params)
 
     # =====================================
     # forward
     # =====================================
 
-    theta = np.array([0., 0., -0.25 * pi, 0., 0., 0.])
+    theta = np.array([0., 0., 0, 0., 0., 0.])
     f = robot.forward(theta)
 
     print("-------forward-------")
